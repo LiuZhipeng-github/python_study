@@ -1,0 +1,184 @@
+{% include 'top.html' %}
+{% include 'left.html' %}
+<!-- 内容区域 -->
+<!-- @@master = admin-layout.html-->
+<!-- @@block = content -->
+
+<div class="content-wrapper">
+
+    <!-- 内容头部 -->
+    <section class="content-header">
+        <h1>
+            关键车间分析
+            <small>关键车间</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+            <li><a href="#">车间分析</a></li>
+            <li class="active">关键车间</li>
+        </ol>
+    </section>
+    <!-- 内容头部 /-->
+
+    <!-- 正文区域 -->
+    <section class="content">
+
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title">本月关键车间</h3>
+            </div>
+
+            <div class="box-body">
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="box box-danger">
+                            <div class="box-body box-profile">
+                                <img class="profile-user-img img-responsive img-circle"
+                                    src="../static/img/user4-128x128.jpg" alt="User profile picture">
+
+                                <h3 class="profile-username text-center">{{a[0]}}</h3>
+
+                                <!-- <p class="text-muted text-center">{{a[6]}}</p> -->
+
+                                <ul class="list-group list-group-unbordered">
+                                    <li class="list-group-item">
+                                        <b>A类问题</b> <a class="pull-right">{{a[1]}}</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <b>B类问题</b> <a class="pull-right">{{a[2]}}</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <b>C类问题</b> <a class="pull-right">{{a[3]}}</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <b>D类问题</b> <a class="pull-right">{{a[4]}}</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <b>问题总数</b> <a class="pull-right">{{a[5]}}</a>
+                                    </li>
+                                </ul>
+                                <form action="room_more" method="POST">
+                                    <button class="btn btn-primary btn-block" type="submit" value="{{a[0]}}"
+                                        name="more"><b>详情</b></button>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- /.box -->
+                    </div>
+                    <div class="col-md-4">
+                        <div class="box box-warning">
+                            <div class="box-body box-profile">
+                                <img class="profile-user-img img-responsive img-circle"
+                                    src="../static/img/user2-160x160.jpg" alt="User profile picture">
+
+                                <h3 class="profile-username text-center">{{b[0]}}</h3>
+
+                                <!-- <p class="text-muted text-center">{{b[6]}}</p> -->
+
+                                <ul class="list-group list-group-unbordered">
+                                    <li class="list-group-item">
+                                        <b>A类问题</b> <a class="pull-right">{{b[1]}}</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <b>B类问题</b> <a class="pull-right">{{b[2]}}</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <b>C类问题</b> <a class="pull-right">{{b[3]}}</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <b>D类问题</b> <a class="pull-right">{{b[4]}}</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <b>问题总数</b> <a class="pull-right">{{b[5]}}</a>
+                                    </li>
+                                </ul>
+
+                                <form action="room_more" method="POST">
+                                    <button class="btn btn-primary btn-block" type="submit" value="{{b[0]}}"
+                                        name="more"><b>详情</b></button>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- /.box -->
+                    </div>
+                    <div class="col-md-4">
+                        <div class="box box-primary">
+                            <div class="box-body box-profile">
+                                <img class="profile-user-img img-responsive img-circle"
+                                    src="../static/img/user1-128x128.jpg" alt="User profile picture">
+
+                                <h3 class="profile-username text-center">{{c[0]}}</h3>
+
+                                <!-- <p class="text-muted text-center">{{c[6]}}</p> -->
+
+                                <ul class="list-group list-group-unbordered">
+                                    <li class="list-group-item">
+                                        <b>A类问题</b> <a class="pull-right">{{c[1]}}</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <b>B类问题</b> <a class="pull-right">{{c[2]}}</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <b>C类问题</b> <a class="pull-right">{{c[3]}}</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <b>D类问题</b> <a class="pull-right">{{c[4]}}</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <b>问题总数</b> <a class="pull-right">{{c[5]}}</a>
+                                    </li>
+                                </ul>
+                                <form action="room_more" method="POST">
+                                    <button class="btn btn-primary btn-block" type="submit" value="{{c[0]}}"
+                                        name="more"><b>详情</b></button>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    </section>
+    <!-- 正文区域 /-->
+
+</div>
+<!-- @@close -->
+<!-- 内容区域 /-->
+
+
+</div>
+
+
+{% include 'footer.html' %}
+<script>
+    $(document).ready(function () {
+        // 选择框
+        $(".select2").select2();
+
+        // WYSIHTML5编辑器
+        $(".textarea").wysihtml5({
+            locale: 'zh-CN'
+        });
+    });
+
+
+    // 设置激活菜单
+    function setSidebarActive(tagUri) {
+        var liObj = $("#" + tagUri);
+        if (liObj.length > 0) {
+            liObj.parent().parent().addClass("active");
+            liObj.addClass("active");
+        }
+    }
+
+
+    $(document).ready(function () {
+        setSidebarActive("room");
+    });
+        //修改激活的侧边栏
+</script>
+</body>
+
+</html>

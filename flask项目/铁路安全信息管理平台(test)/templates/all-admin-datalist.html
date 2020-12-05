@@ -1,0 +1,400 @@
+{% include 'top.html' %}
+{% include 'left.html' %}
+
+
+<!-- 内容区域 -->
+<!-- @@master = admin-layout.html-->
+<!-- @@block = content -->
+
+<div class="content-wrapper">
+
+    <!-- 内容头部 -->
+    <section class="content-header">
+        <h1>
+            数据管理
+            <small>数据列表</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+            <li><a href="#">数据管理</a></li>
+            <li class="active">数据列表</li>
+        </ol>
+    </section>
+    <!-- 内容头部 /-->
+
+    <!-- 正文区域 -->
+    <section class="content">
+
+        <!-- .box-body -->
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title">安全信息列表</h3>
+            </div>
+
+
+
+            <div class="box-body">
+
+                <!-- 数据表格 -->
+                <div class="table-box">
+                    {% if users %}
+                    <!--工具栏-->
+                    <div class="pull-left">
+                        <div class="form-group form-inline">
+                            <div class="btn-group">
+                                <a href="/to_add" class="btn btn-default" title="新建"><i class="fa fa-file-o"></i> 新建</a>
+                                <!-- <button type="button" class="btn btn-default" title="新建"><i
+                                                class="fa fa-file-o"></i> 新建</button> -->
+                                <button type="button" class="btn btn-default" title="删除"><i class="fa fa-trash-o"></i>
+                                    删除</button>
+                                <!-- <button type="button" class="btn btn-default" title="开启"><i
+                                                class="fa fa-check"></i> 开启</button>
+                                        <button type="button" class="btn btn-default" title="屏蔽"><i
+                                                class="fa fa-ban"></i> 屏蔽</button> -->
+                                <button type="button" class="btn btn-default" title="刷新" onclick="location.reload()"><i
+                                        class="fa fa-refresh"></i> 刷新</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="box-tools pull-right">
+                        <div class="has-feedback">
+                            <input type="text" class="form-control input-sm" placeholder="搜索">
+                            <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                        </div>
+                    </div> -->
+                    <!--工具栏/-->
+
+                    <!--数据列表-->
+                    <table id="dataList" class="table table-bordered table-striped table-hover dataTable">
+
+                        <thead>
+                            <tr>
+                                <th class="" style="padding-right:0px;">
+                                    <input id="selall" type="checkbox" class="icheckbox_square-blue">
+                                </th>
+                                <th>ID</th>
+                                <th style="width: 300px;">问题</th>
+                                <th>检查时间</th>
+                                <th>检查人</th>
+                                <th>检查人职务</th>
+                                <th>检查车间</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- <form action="/to_edit" method="POST" id="edit_form"></form> -->
+                            <form action="/details" method="POST" id="form">
+
+                                {% for user in users %}
+                                <tr class="del_tr">
+                                    <td><input name="ids" type="checkbox"></td>
+                                    <td>{{ user[0] }}</td>
+                                    <td>{{ user[1] }}</td>
+                                    <td>{{ user[2] }}</td>
+                                    <td>{{ user[3] }}</td>
+                                    <td>{{ user[4] }}</td>
+                                    <td>{{ user[5] }}</td>
+
+                                    <td class="text-center">
+                                        <!-- <button class="btn bg-olive btn-xs" type="button" data-toggle="modal"
+                                                    value="{{ user[0] }}" id="fix">修改</button> -->
+                                        <a class="btn bg-olive btn-xs" href="#fix" role="button"
+                                            data-toggle="modal">修改</a>
+                                        <button type="button" id="del" class="btn bg-olive btn-xs del"
+                                            value="{{ user[0] }}">删除</button>
+                                        <button type="submit" form="form" name="details"
+                                            class="btn bg-olive btn-xs details" value="{{ user[0] }}">详情</button>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                                <!-- <div class="link">{{ pagination.links }}</div> -->
+
+                            </form>
+                        </tbody>
+                        <!--
+                            <tfoot>
+                            <tr>
+                            <th>Rendering engine</th>
+                            <th>Browser</th>
+                            <th>Platform(s)</th>
+                            <th>Engine version</th>
+                            <th>CSS grade</th>
+                            </tr>
+                            </tfoot>-->
+
+                    </table>
+                    <!--数据列表/-->
+
+                    <!--工具栏-->
+                    <!-- <div class="pull-left">
+                                <div class="form-group form-inline">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default" title="新建"><i class="fa fa-file-o"></i> 新建</button>
+                                        <button type="button" class="btn btn-default" title="删除"><i class="fa fa-trash-o"></i> 删除</button>
+                                        <button type="button" class="btn btn-default" title="开启"><i class="fa fa-check"></i> 开启</button>
+                                        <button type="button" class="btn btn-default" title="屏蔽"><i class="fa fa-ban"></i> 屏蔽</button>
+                                        <button type="button" class="btn btn-default" title="刷新"><i class="fa fa-refresh"></i> 刷新</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-tools pull-right">
+                                <div class="has-feedback">
+                                    <input type="text" class="form-control input-sm" placeholder="搜索">
+                                    <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                                </div>
+                            </div> -->
+                    <!--工具栏/-->
+
+                </div>
+                <!-- 数据表格 /-->
+
+
+
+                <!-- /.box-body -->
+
+                <!-- .box-footer-->
+                <div class="box-footer">
+
+                    <div class="box-tools pull-right">
+                        {{ pagination.links }}
+                    </div>
+
+                </div>
+                <!-- /.box-footer-->
+
+
+
+            </div>
+        </div>
+        {% else%}
+        <div class="">
+            <div class="form-group form-inline">
+                <div class="btn-group">
+                    <a href="/to_add" class="btn btn-default" title="新建"><i class="fa fa-file-o"></i> 新建</a>
+
+                    <button type="button" class="btn btn-default" title="删除"><i class="fa fa-trash-o"></i>
+                        删除</button>
+                    <!-- <button type="button" class="btn btn-default" title="开启"><i
+                                                        class="fa fa-check"></i> 开启</button>
+                                                <button type="button" class="btn btn-default" title="屏蔽"><i
+                                                        class="fa fa-ban"></i> 屏蔽</button> -->
+                    <button type="button" class="btn btn-default" title="刷新" onclick="location.reload()"><i
+                            class="fa fa-refresh"></i> 刷新</button>
+                    <button type="button" class="btn btn-default" title="新建" onclick="history.back(-1);"><i
+                            class="fa fa-reply"></i> 返回</button>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h1>暂无此数据,请重新查询!</h1>
+        </div>
+        {%endif%}
+    </section>
+    <!-- 正文区域 /-->
+
+</div>
+<!-- @@close -->
+<!-- 内容区域 /-->
+<!--模态窗口-->
+<div class="tab-pane" id="tab-model">
+    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+            弹出模式对话框
+        </button> -->
+
+    <div id="fix" class="modal modal-primary" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <form id="fm">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">标题</h4>
+                    </div>
+                    <div class="modal-body">
+
+
+                        <div class="box-body">
+                            <div class="form-horizontal">
+                                <div class="form-group">
+                                    <label for="num" class="col-sm-3 control-label">序号</label>
+                                    <div class="col-sm-6"><input type="text" id="num" class="form-control conten"
+                                            placeholder="请输入序号" name="num" style="margin-top: 5px;" id="content">
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="amd_type" class="col-sm-3 control-label">修改文本类型</label>
+                                    <div class="col-sm-6">
+                                        <select class="form-control" id="amd_type" name="amd_type">
+                                            <option></option>
+                                            <option>问题</option>
+                                            <option>检查人</option>
+                                            <option>检查人岗位</option>
+                                            <option>录入科室</option>
+                                            <option>责任单位</option>
+                                            <option>责任人</option>
+                                            <option>责任人岗位</option>
+                                            <option>责任人政治面貌</option>
+                                            <option>整改要求</option>
+                                            <option>整改情况</option>
+                                            <option>复查意见</option>
+                                            <option>风险项</option>
+                                            <option>风险点</option>
+                                            <option>风险因素</option>
+                                            <option>性质</option>
+                                            <option>分值</option>
+                                            <option>信息点</option>
+                                            <option>考核标记</option>
+                                            <option>考核分</option>
+                                            <option>特殊标记</option>
+                                            <option>责任科室</option>
+                                            <option>分类</option>
+                                            <option>问题编号</option>
+                                        </select>
+                                        <input type="text" class="form-control" id="amd_content" placeholder="请输入内容"
+                                            name="amd_content" style="margin-top: 5px;">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="amd_timetype" class="col-sm-3 control-label">修改时间类型</label>
+                                    <div class="col-sm-6 ">
+                                        <select class="form-control" id="amd_timetype" name="amd_timetype">
+                                            <option></option>
+                                            <option>检查时间</option>
+                                            <option>整改时间</option>
+                                            <option>整改期限</option>
+                                            <option>复查时间</option>
+                                            <option>上报时间</option>
+                                            <option>科室整改时间</option>
+                                            <option>班组整改时间</option>
+                                        </select>
+                                        <input type="date" class="form-control" id="amd_date" placeholder="请输入具体日期"
+                                            name="amd_date" style="margin-top: 5px;">
+                                        <input type="time" class="form-control" id="amd_time" placeholder="请输入具体时间"
+                                            name="amd_time" style="margin-top: 5px;">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline" data-dismiss="modal">关闭</button>
+                        <button type="button" class="btn btn-outline" data-dismiss="modal" id="save">保存</button>
+                    </div>
+                </form>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+</div>
+
+<!--模态窗口/-->
+<!-- 底部导航 -->
+{% include 'footer.html' %}
+<script>
+    $(document).ready(function () {
+        // 选择框
+        $(".select2").select2();
+
+        // WYSIHTML5编辑器
+        $(".textarea").wysihtml5({
+            locale: 'zh-CN'
+        });
+    });
+
+
+    // 设置激活菜单
+    function setSidebarActive(tagUri) {
+        var liObj = $("#" + tagUri);
+        if (liObj.length > 0) {
+            liObj.parent().parent().addClass("active");
+            liObj.addClass("active");
+        }
+    }
+
+
+    $(document).ready(function () {
+
+        // 激活导航位置
+        setSidebarActive("admin-dataform");
+
+        // 列表按钮 
+        $("#dataList td input[type='checkbox']").iCheck({
+            checkboxClass: 'icheckbox_square-blue',
+            increaseArea: '20%'
+        });
+        // 全选操作 
+        $("#selall").click(function () {
+            var clicks = $(this).is(':checked');
+            if (!clicks) {
+                $("#dataList td input[type='checkbox']").iCheck("uncheck");
+            } else {
+                $("#dataList td input[type='checkbox']").iCheck("check");
+            }
+            $(this).data("clicks", !clicks);
+        });
+    });
+
+    $(function () {
+        $(".del").on({
+            click: function () {
+                var val = $(this).prop("value")
+                // alert(val)
+                var ta = {
+                    data: JSON.stringify({
+                        'x': val,
+
+                    }),
+                }
+                $(this).parents(".del_tr").remove();
+                $.ajax({
+                    url: "/del",
+                    type: 'POST',
+                    data: ta,
+                    dataType: 'json',
+                    success: function (data) {
+                        alert(JSON.stringify(data));
+                    }
+                })
+
+            }
+        })
+
+    });
+    $('#fix').on('show.bs.modal', function (event) {
+        var btnThis = $(event.relatedTarget); //触发事件的按钮
+        var modal = $(this);  //当前模态框
+        var modalId = btnThis.data('id');   //解析出data-id的内容
+        var content = btnThis.closest('tr').find('td').eq(1).text();
+        var content = content.replace(/\s/g, "");
+        modal.find('.conten').val(content);
+
+    });
+
+    $("#save").click(function () {
+        $.ajax({
+            type: "POST",   //提交的方法
+            url: "/edit", //提交的地址  
+            data: $('#fm').serialize(),// 序列化表单值  
+            async: false,
+            error: function (request) {  //失败的话
+                alert("Connection error");
+            },
+            success: function (data) {  //成功
+                alert(data);  //就将返回的数据显示出来
+
+            }
+        });
+    });  
+</script>
+</body>
+
+</html>

@@ -1,0 +1,210 @@
+{% include 'top.html' %}
+{% include 'left.html' %}
+
+
+<!-- 内容区域 -->
+<!-- @@master = admin-layout.html-->
+<!-- @@block = content -->
+
+<div class="content-wrapper">
+
+    <!-- 内容头部 -->
+    <section class="content-header">
+        <h1>
+            数据详情页
+            <!-- <small>模块功能</small> -->
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="/"><i class="fa fa-dashboard"></i> 首页</a></li>
+            <li><a href="#">数据详情页</a></li>
+            <!-- <li class="active">模块功能</li> -->
+        </ol>
+    </section>
+    <!-- 内容头部 /-->
+
+    <!-- 正文区域 -->
+    <section class="content">
+
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title"> 详细信息</h3>
+            </div>
+
+            <div class="box-body">
+                <table class="table table-bordered table-striped table-hover " style=" table-layout:fixed ;">
+
+                    <tbody class="detail">
+                        {% for da in data %}
+                        <tr>
+                            <th><b>序号</b></th>
+                            <td>{{ da[0] }}</td>
+                        </tr>
+                        <tr>
+                            <th><b>问题</b></th>
+                            <td>{{ da[1] }}</td>
+                        </tr>
+                        <tr>
+                            <th><b>检查时间</b></th>
+                            <td>{{ da[2] }}</td>
+                        </tr>
+                        <tr>
+                            <th><b>检查人</b></th>
+                            <td>{{ da[3] }}</td>
+                        </tr>
+                        <tr>
+                            <th><b>检查人岗位</b></th>
+                            <td>{{ da[4] }}</td>
+                        </tr>
+                        <tr>
+                            <th><b>录入科室</b></th>
+                            <td>{{ da[5] }}</td>
+                        </tr>
+                        <tr>
+                            <th><b>责任单位</b></th>
+                            <td>{{ da[6] }}</td>
+                        </tr>
+                        <tr>
+                            <th><b>责任人</b></th>
+                            <td>{{ da[7] }}</td>
+                        </tr>
+                        <tr>
+                            <th><b>责任人岗位</b></th>
+                            <td>{{ da[8] }}</td>
+                        </tr>
+                        <tr>
+                            <th><b>责任人政治面貌</b></th>
+                            <td>{{ da[9] }}</td>
+                        </tr>
+                        <tr>
+                            <th><b>整改期限</b></th>
+                            <td>{{ da[10] }}</td>
+                        </tr>
+                        <tr>
+                            <th><b>整改要求</b></th>
+                            <td>{{ da[11] }}</td>
+                        </tr>
+                        <tr>
+                            <th><b>整改时间</b></th>
+                            <td>{{ da[12] }}</td>
+                        </tr>
+                        <tr>
+                            <th><b>整改情况</b></th>
+                            <td>{{ da[13] }}</td>
+                        </tr>
+                        <tr>
+                            <th><b>复查时间</b></th>
+                            <td>{{ da[14] }}</td>
+                        </tr>
+                        <tr>
+                            <th><b>复查意见</b></th>
+                            <td>{{ da[15] }}</td>
+                        </tr>
+                        <tr>
+                            <th><b>风险项</b></th>
+                            <td>{{ da[16] }}</td>
+                        </tr>
+                        <tr>
+                            <th><b>风险点</b></th>
+                            <td>{{ da[17] }}</td>
+                        </tr>
+                        <tr>
+                            <th><b>风险因素</b></th>
+                            <td>{{ da[18] }}</td>
+                        </tr>
+                        <tr>
+                            <th><b>性质</b></th>
+                            <td>{{ da[19] }}</td>
+                        </tr>
+
+                        <tr>
+                            <th><b>分值</b></th>
+                            <td>{{ da[20] }}</td>
+                        </tr>
+                        <tr>
+                            <th><b>信息点</b></th>
+                            <td>{{ da[21] }}</td>
+                        </tr>
+                        <tr>
+                            <th><b>考核标记</b></th>
+                            <td>{{ da[22] }}</td>
+                        </tr>
+                        <tr>
+                            <th><b>考核分</b></th>
+                            <td>{{ da[23] }}</td>
+                        </tr>
+                        <tr>
+                            <th><b>特殊标记</b></th>
+                            <td>{{ da[24] }}</td>
+                        </tr>
+                        <tr>
+                            <th><b>责任科室</b></th>
+                            <td>{{ da[25] }}</td>
+                        </tr>
+                        <tr>
+                            <th><b>上报时间</b></th>
+                            <td>{{ da[26] }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>科室整改时间</b></td>
+                            <td>{{ da[27] }}</td>
+                        </tr>
+                        <tr>
+                            <th><b>班组整改时间</b></th>
+                            <td>{{ da[28] }}</td>
+                        </tr>
+                        <tr>
+                            <th><b>分类</b></th>
+                            <td>{{ da[29] }}</td>
+                        </tr>
+                        <tr>
+                            <th><b>问题编号</b></th>
+                            <td>{{ da[30] }}</td>
+                        </tr>
+
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+
+    </section>
+    <!-- 正文区域 /-->
+
+</div>
+<!-- @@close -->
+<!-- 内容区域 /-->
+
+
+<!-- 底部导航 -->
+{% include 'footer.html' %}
+<script>
+    $(document).ready(function () {
+        // 选择框
+        $(".select2").select2();
+
+        // WYSIHTML5编辑器
+        $(".textarea").wysihtml5({
+            locale: 'zh-CN'
+        });
+    });
+
+
+    // 设置激活菜单
+    function setSidebarActive(tagUri) {
+        var liObj = $("#" + tagUri);
+        if (liObj.length > 0) {
+            liObj.parent().parent().addClass("active");
+            liObj.addClass("active");
+        }
+    }
+
+
+    $(document).ready(function () {
+        setSidebarActive("admin-dataform");
+    });
+</script>
+</body>
+
+</html>

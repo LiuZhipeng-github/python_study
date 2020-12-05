@@ -1,0 +1,175 @@
+<!-- 导航侧栏 -->
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+        <!-- Sidebar user panel -->
+        {% if session.get('user') ==None %}
+        {%elif session.get('user')!=None%}
+        <div class="user-panel">
+            <div class="pull-left image">
+                <img src="../static/img/{{ session.get('user') }}.jpg" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+                <p>{{ session.get('user') }}</p>
+                <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
+            </div>
+        </div>
+        {%endif%}
+        <!-- search form -->
+        <!--<form action="#" method="get" class="sidebar-form">
+            <div class="input-group">
+                <input type="text" name="q" class="form-control" placeholder="搜索...">
+                <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
+            </div>
+        </form>-->
+        <!-- /.search form -->
+
+
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu">
+            <li class="header">菜单</li>
+
+            <li id="admin-index"><a href="/"><i class="fa fa-dashboard"></i>
+                    <span>首页</span></a></li>
+
+            <!-- 菜单 -->
+
+
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-folder"></i> <span>安全信息管理后台</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+
+                    <li id="admin-import">
+                        <a href="/to_import">
+                            <i class="fa fa-circle-o"></i> 导入
+                        </a>
+                    </li>
+
+                    <li id="admin-add">
+                        <a href="/to_add">
+                            <i class="fa fa-circle-o"></i> 添加
+                        </a>
+                    </li>
+
+                    <li id="admin-dataform">
+                        <a href="to_search">
+                            <i class="fa fa-circle-o"></i> 查询
+                        </a>
+                    </li>
+
+                    <li id="admin-profile">
+                        <a href="all-admin-profile.html">
+                            <i class="fa fa-circle-o"></i> 个人中心
+                        </a>
+                    </li>
+
+
+                </ul>
+            </li>
+
+
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-pie-chart"></i> <span>信息可视化</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+
+                    <li id="charts-time">
+                        <a href="/to_chart1">
+                            <i class="fa fa-circle-o"></i> 时间安全信息统计
+                        </a>
+                    </li>
+                    <li id="charts-class">
+                        <a href="/to_chart2">
+                            <i class="fa fa-circle-o"></i> 分类安全信息统计
+                        </a>
+                    </li>
+                    <li id="charts-room">
+                        <a href="/to_chart3">
+                            <i class="fa fa-circle-o"></i> 车间安全信息统计
+                        </a>
+                    </li>
+                    <li id="charts-other">
+                        <a href="/to_chart4">
+                            <i class="fa fa-circle-o"></i> 其他安全信息统计
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+
+
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-laptop"></i> <span>数据智能分析</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li id="people">
+                        <a href="/to_people_analyze">
+                            <i class="fa fa-circle-o"></i> 月度关键人物
+                        </a>
+                    </li>
+
+
+                    <li id="room">
+                        <a href="/to_room_analyze">
+                            <i class="fa fa-circle-o"></i> 月度关键车间
+                        </a>
+                    </li>
+
+
+                    <li id="elements-general">
+                        <a href="#">
+                            <i class="fa fa-circle-o"></i> 党员违规信息
+                        </a>
+                    </li>
+                </ul>
+
+            </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- 菜单 /-->
+
+            <li id="admin-documentation"><a href="documentation.html" target="_blank"><i class="fa fa-book"></i>
+                    <span>AdminLTE汉化文档</span></a></li>
+
+        </ul>
+    </section>
+    <!-- /.sidebar -->
+</aside>
+<!-- 导航侧栏 /-->

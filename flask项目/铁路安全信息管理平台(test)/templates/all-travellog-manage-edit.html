@@ -1,0 +1,382 @@
+{% include 'top.html' %}
+{% include 'left.html' %}
+<!-- 内容头部 /-->
+
+<!-- 正文区域 -->
+<div class="content-wrapper">
+
+    <!-- 内容头部 -->
+    <section class="content-header">
+        <h1>
+            添加安全管理信息
+
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="/"><i class="fa fa-dashboard"></i> 首页</a></li>
+            <li><a href="/all-admin-search">查询安全管理信息</a></li>
+            <li class="active">添加安全管理信息</li>
+        </ol>
+    </section>
+    <div class="warning" style="margin-top: 15px;">
+        {% with errors = get_flashed_messages(category_filter=["add_error"]) %}
+        {% if errors %}
+        <div class="error">
+            <a class="close" href="/to_add" style="margin-right: 25px;">×</a>
+            <ul style="margin-bottom: 0px;">
+                {% for msg in errors %}
+                <li class="text-danger" style="font-size: medium;">{{ msg }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        {% endwith %}
+    </div>
+    <section class="content">
+
+        <div class="box-body">
+
+            <!--tab页-->
+            <div class="nav-tabs-custom">
+
+                <!--tab头-->
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#tab-form" data-toggle="tab">表单</a>
+                    </li>
+                </ul>
+                <!--tab头/-->
+
+                <!--tab内容-->
+                <div class="tab-content">
+
+                    <!--表单内容-->
+                    <form action="/add" method="POST">
+                        <div class="tab-pane active" id="tab-form">
+                            <div class="col-md-2 title add_title ">问题编号</div>
+                            <div class="col-md-10 data add_content">
+                                <input type="number" class="form-control" id="question_number" placeholder="请输入问题编号"
+                                    name="question_number" required="required">
+                            </div>
+                            <div class="col-md-2 title add_title ">检查时间</div>
+                            <div class="col-md-10 data add_content">
+                                <input type="time" class="form-control" id="time" name="time">
+                            </div>
+                            <div class="col-md-2 title add_title ">检查日期</div>
+                            <div class="col-md-10 data add_content">
+                                <input type="date" class="form-control" id="day_time" name="day_time"
+                                    required="required">
+                            </div>
+                            <div class="col-md-2 title add_title ">检查人</div>
+                            <div class="col-md-10 data add_content">
+                                <input type="text" class="form-control" id="jianchaname" placeholder="请输入检查人"
+                                    name="jianchaname">
+                            </div>
+
+                            <div class="col-md-2 title add_title">责任人</div>
+                            <div class="col-md-10 data add_content">
+                                <input type="text" class="form-control" id="zerenname" placeholder="请输入责任人"
+                                    name="zerenname">
+                            </div>
+                            <div class="col-md-2 title add_title">风险项</div>
+                            <div class="col-md-10 data add_content">
+                                <input type="text" class="form-control" id="fengixan" placeholder="风险项" name="fengixan">
+                            </div>
+                            <div class="col-md-2 title add_title">性质</div>
+                            <div class="col-md-10 data add_content">
+                                <select class="form-control" id="xingzhi" name="xingzhi">
+                                    <option>A类</option>
+                                    <option>B类</option>
+                                    <option>C类</option>
+                                    <option>D类</option>
+                                    <option>其他</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-2 title add_title">考核标记</div>
+                            <div class="col-md-10 data add_content">
+                                <select class="form-control" id="point" name="point">
+                                    <option>考核</option>
+                                    <option>考核</option>
+                                    <option>考核</option>
+                                    <option>考核</option>
+                                    <option>考核</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-2 title add_title">问题描述</div>
+                            <div class="col-md-10 data add_content">
+                                <textarea class="form-control" rows="5" id="description" name="description"></textarea>
+                            </div>
+                            <div class="col-md-2 title add_title">检查人岗位</div>
+                            <div class="col-md-10 data add_content">
+                                <input type="text" class="form-control" id="jianchagangwei" placeholder="请输入检查人岗位"
+                                    name="jianchagangwei">
+                            </div>
+                            <div class="col-md-2 title add_title">录入科室</div>
+                            <div class="col-md-10 data add_content">
+                                <input type="text" class="form-control" id="lurukeshi" placeholder="请输入录入科室"
+                                    name="lurukeshi">
+                            </div>
+
+                            <div class="col-md-2 title add_title">责任单位</div>
+                            <div class="col-md-10 data add_content">
+                                <input type="text" class="form-control" id="zerendanwei" placeholder="请输入责任单位"
+                                    name="zerendanwei">
+                            </div>
+                            <div class="col-md-2 title add_title">责任人政治面貌</div>
+                            <div class="col-md-10 data add_content">
+                                <input type="text" class="form-control" id="zerenpolitics" placeholder="请输入责任人政治面貌"
+                                    name="zerenpolitics">
+                            </div>
+                            <div class="col-md-2 title add_title">责任人岗位</div>
+                            <div class="col-md-10 data add_content">
+                                <input type="text" class="form-control" id="zerengangwei" placeholder="请输入责任人岗位"
+                                    name="zerengangwei">
+                            </div>
+
+                            <div class="col-md-2 title add_title">责任科室</div>
+                            <div class="col-md-10 data add_content">
+                                <input type="text" class="form-control" id="zerenroom" placeholder="请输入责任科室"
+                                    name="zerenroom">
+                            </div>
+                            <div class="col-md-2 title add_title">信息点</div>
+                            <div class="col-md-10 data add_content">
+                                <input type="text" class="form-control" id="message" placeholder="请输入信息点"
+                                    name="message">
+                            </div>
+                            <div class="col-md-2 title add_title">分值</div>
+                            <div class="col-md-10 data add_content">
+                                <input type="number" class="form-control" id="grade" placeholder="请输入分值" name="grade"
+                                    required="required">
+                            </div>
+
+                            <div class="col-md-2 title add_title">考核分</div>
+                            <div class="col-md-10 data add_content">
+                                <input type="number" class="form-control" id="testgrade" placeholder="请输入考核分"
+                                    name="testgrade" required="required">
+                            </div>
+                            <div class="col-md-2 title add_title">特殊标记</div>
+                            <div class="col-md-10 data add_content">
+                                <input type="text" class="form-control" id="special" placeholder="请输入特殊标记"
+                                    name="special">
+                            </div>
+                            <div class="col-md-2 title add_title">上报时间</div>
+                            <div class="col-md-10 data add_content">
+                                <input type="date" class="form-control" id="reporttime" placeholder="请输入上报时间"
+                                    name="reporttime">
+                            </div>
+
+                            <div class="col-md-2 title add_title">分类</div>
+                            <div class="col-md-10 data add_content">
+                                <select class="form-control" id="sort" name="sort">
+                                    <option>现场作业</option>
+                                    <option>现场作业</option>
+                                    <option>现场作业</option>
+                                    <option>现场作业</option>
+                                    <option>现场作业</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2 title add_title">风险因素</div>
+                            <div class="col-md-10 data add_content">
+                                <select class="form-control" id="denger" name="denger">
+                                    <option>现场作业</option>
+                                    <option>现场作业</option>
+                                    <option>现场作业</option>
+                                    <option>现场作业</option>
+                                    <option>现场作业</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-2 title add_title">风险点</div>
+                        <div class="col-md-10 data add_content">
+                            <input type="text" class="form-control" id="denger_point" placeholder="风险点"
+                                name="denger_point">
+                        </div>
+                        <div class="col-md-2 title add_title">整改状态</div>
+                        <div class="col-md-10 data add_content">
+                            <select class="form-control" id="status" name="status">
+                                <option>已整改</option>
+                                <option>未整改</option>
+                                <option>已整改</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2 title add_title">整改时间</div>
+                        <div class="col-md-10 data add_content">
+                            <input type="time" class="form-control" id="amdtime" name="amdtime">
+                        </div>
+                        <div class="col-md-2 title add_title">整改日期</div>
+                        <div class="col-md-10 data add_content">
+                            <input type="date" class="form-control" id="amdday" name="amdday">
+                        </div>
+                        <div class="col-md-2 title add_title">整改情况</div>
+                        <div class="col-md-10 data add_content">
+                            <textarea class="form-control" rows="2" id="amd" name="amd"></textarea>
+                        </div>
+                        <div class="col-md-2 title add_title">整改期限</div>
+                        <div class="col-md-10 data add_content">
+                            <input type="date" class="form-control" id="amdday_final" name="amdday_final">
+                        </div>
+                        <div class="col-md-2 title add_title">复查日期</div>
+                        <div class="col-md-10 data add_content">
+                            <input type="date" class="form-control" id="relook" name="relook">
+                        </div>
+                        <div class="col-md-2 title add_title">科室整改日期</div>
+                        <div class="col-md-10 data add_content">
+                            <input type="date" class="form-control" id="keshi_time" name="keshi_time">
+                        </div>
+                        <div class="col-md-2 title add_title">班组整改日期</div>
+                        <div class="col-md-10 data add_content">
+                            <input type="date" class="form-control" id="banzu_time" name="banzu_time">
+                        </div>
+                        <div class="col-md-2 title add_title">整改要求</div>
+                        <div class="col-md-10 data add_content">
+                            <input type="text" class="form-control" id="amdrequest" placeholder="请输入整改要求"
+                                name="amdrequest">
+                        </div>
+                        <div class="col-md-2 title add_title">复查意见</div>
+                        <div class="col-md-10 data add_content">
+                            <textarea class="form-control" rows="1" id="advice" name="advice"></textarea>
+                        </div>
+                        <div class="box-tools text-center">
+                            <button type="submit" class="btn bg-maroon">保存</button>
+                            <button type="button" class="btn bg-default" onclick="history.back(-1);">返回</button>
+                        </div>
+                    </form>
+
+
+
+
+                    <!--游记-->
+                    <!-- <div class="panel panel-default">
+                                    <div class="panel-heading">游记</div>
+
+                                    <button type="button" class="btn bg-maroon btn-flat margin"
+                                        id="btn-dayadd">添加游记</button>
+
+                                    <div id="dayslist" class="panel-body">
+
+                                        <div class="box box-success">
+                                            <div class="box-header with-border">
+                                                <h3 class="box-title">第xx天游记</h3>
+
+                                                <div class="box-tools pull-right">
+                                                    <button type="button" class="btn btn-box-tool"
+                                                        data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                                    <button type="button" class="btn btn-box-tool"
+                                                        data-widget="remove"><i class="fa fa-times"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="box-body">
+                                                <input type="text" class="form-control" placeholder="第xx天游记标题"
+                                                    value=""><br>
+                                                <textarea class="textarea" placeholder="第xx天游记正文"
+                                                    style="width: 100%; height: 265px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div> -->
+                    <!--游记/-->
+
+
+                    <!--工具栏-->
+
+                    <!--工具栏/-->
+
+
+
+                    <!--游记输入模板-->
+                    <!-- <div id="day-tpl" style="display:none">
+                                    <div class="box box-success">
+                                        <div class="box-header with-border">
+                                            <h3 class="box-title">第xx天游记</h3>
+
+                                            <div class="box-tools pull-right">
+                                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                                        class="fa fa-minus"></i></button>
+                                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i
+                                                        class="fa fa-times"></i></button>
+                                            </div>
+                                        </div>
+                                        <div class="box-body">
+                                            <input type="text" class="form-control" placeholder="第xx天游记标题" value=""><br>
+                                            <textarea class="" placeholder="第xx天游记正文"
+                                                style="width: 100%; height: 265px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                                        </div>
+                                    </div>
+                                </div> -->
+                    <!--游记输入模板/-->
+                </div>
+                <!--表单内容/-->
+
+            </div>
+            <!--tab内容/-->
+
+        </div>
+        <!--tab页/-->
+
+
+        <!-- .box-footer
+        <div class="box-footer"></div>
+        -->
+        <!-- /.box-footer-->
+
+</div>
+
+</section>
+<!-- 正文区域 /-->
+
+</div>
+<!-- 内容区域 /-->
+
+<!-- 底部导航 -->
+{% include 'footer.html' %}
+<script>
+    $(document).ready(function () {
+        // 选择框
+        $(".select2").select2();
+
+        // WYSIHTML5编辑器
+        $(".textarea").wysihtml5({
+            locale: 'zh-CN'
+        });
+    });
+
+
+    // 设置激活菜单
+    function setSidebarActive(tagUri) {
+        var liObj = $("#" + tagUri);
+        if (liObj.length > 0) {
+            liObj.parent().parent().addClass("active");
+            liObj.addClass("active");
+        }
+    }
+
+
+
+    // 添加每天的游记
+    function addEditer() {
+        var dayEditer = $('#day-tpl').html();
+        $(".panel-body").append(dayEditer);
+
+        $("#dayslist textarea:last").wysihtml5({
+            locale: 'zh-CN'
+        });
+    }
+
+    $(document).ready(function () {
+
+        $("#btn-dayadd").click(function () {
+            addEditer();
+        });
+    });
+
+
+    $(document).ready(function () {
+        // 激活导航位置
+        setSidebarActive("admin-add");
+    });
+</script>
+</body>
+
+</html>
