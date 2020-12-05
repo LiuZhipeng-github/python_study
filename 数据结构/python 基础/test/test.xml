@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root name="中国">
+  <province name="北京市">
+    <city name="北京市" index="1" >
+      <area name="东城区" index="1" />
+      <area name="西城区" index="2" />
+      <area name="崇文区" index="3" />
+      <area name="宣武区" index="4" />
+      <area name="朝阳区" index="5" />
+      <area name="丰台区" index="6" />
+      <area name="石景山区" index="7" />
+      <area name="海淀区" index="8" />
+      <area name="门头沟区" index="9" />
+      <area name="房山区" index="10" />
+      <area name="通州区" index="11" />
+      <area name="顺义区" index="12" />
+      <area name="昌平区" index="13" />
+      <area name="大兴区" index="14" />
+      <area name="平谷区" index="15" />
+      <area name="怀柔区" index="16" />
+      <area name="密云县" index="17" />
+      <area name="延庆县" index="18" />
+    </city>
+  </province>
+  <province name="天津市">
+    <city name="天津市" index="2">
+      <area name="和平区" index="19" >opj</area>
+      <area name="河东区" index="20" >opj</area>
+      <area name="河西区" index="21" >opj</area>
+      <area name="南开区" index="22" >opj</area>
+      <area name="河北区" index="23" >opj</area>
+      <area name="红桥区" index="24" >opj</area>
+      <area name="塘沽区" index="25" >opj</area>
+      <area name="汉沽区" index="26" >opj</area>
+      <area name="大港区" index="27" >opj</area>
+      <area name="东丽区" index="28" >opj</area>
+      <area name="西青区" index="29" >opj</area>
+      <area name="津南区" index="30" >opj</area>
+      <area name="北辰区" index="31" >opj</area>
+      <area name="武清区" index="32" >opj</area>
+      <area name="宝坻区" index="33" >opj</area>
+      <area name="宁河县" index="34" >opj</area>
+      <area name="静海县" index="35" >opj</area>
+      <area name="蓟  县" index="36" >opj</area>
+    </city>
+  </province>
+  <province name="河北省">
+    <city name="石家庄市" index="3">
+      <area name="长安区" index="37" />
+      <area name="桥东区" index="38" />
+      <area name="桥西区" index="39" />
+      <area name="新华区" index="40" />
+      <area name="郊  区" index="41" />
+      <area name="井陉矿区" index="42" />
+      <area name="井陉县" index="43" />
+      <area name="正定县" index="44" />
+      <area name="栾城县" index="45" />
+      <area name="行唐县" index="46" />
+      <area name="灵寿县" index="47" />
+      <area name="高邑县" index="48" />
+      <area name="深泽县" index="49" />
+      <area name="赞皇县" index="50" />
+      <area name="无极县" index="51" />
+      <area name="平山县" index="52" />
+      <area name="元氏县" index="53" />
+      <area name="赵  县" index="54" />
+      <area name="辛集市" index="55" />
+      <area name="藁城市" index="56" />
+      <area name="晋州市" index="57" />
+      <area name="新乐市" index="58" />
+      <area name="鹿泉市" index="59" />
+    </city>
+    <city name="唐山市" index="4">
+      <area name="路南区" index="60" />
+      <area name="路北区" index="61" />
+      <area name="古冶区" index="62" />
+      <area name="开平区" index="63" />
+      <area name="新  区" index="64" />
+      <area name="丰润县" index="65" />
+      <area name="滦  县" index="66" />
+      <area name="滦南县" index="67" />
+      <area name="乐亭县" index="68" />
+      <area name="迁西县" index="69" />
+      <area name="玉田县" index="70" />
+      <area name="唐海县" index="71" />
+      <area name="遵化市" index="72" />
+      <area name="丰南市" index="73" />
+      <area name="迁安市" index="74" />
+    </city>
+    <city name="秦皇岛市" index="5">
+      <area name="海港区" index="75" />
+      <area name="山海关区" index="76" />
+      <area name="北戴河区" index="77" />
+      <area name="青龙满族自治县" index="78" />
+      <area name="昌黎县" index="79" />
+      <area name="抚宁县" index="80" />
+      <area name="卢龙县" index="81" />
+    </city>
+    <city name="邯郸市" index="6">
+      <area name="邯山区" index="82" />
+      <area name="丛台区" index="83" />
+      <area name="复兴区" index="84" />
+      <area name="峰峰矿区" index="85" />
+      <area name="邯郸县" index="86" />
+      <area name="临漳县" index="87" />
+      <area name="成安县" index="88" />
+      <area name="大名县" index="89" />
+      <area name="涉  县" index="90" />
+      <area name="磁  县" index="91" />
+      <area name="肥乡县" index="92" />
+      <area name="永年县" index="93" />
+      <area name="邱  县" index="94" />
+      <area name="鸡泽县" index="95" />
+      <area name="广平县" index="96" />
+      <area name="馆陶县" index="97" />
+      <area name="魏  县" index="98" />
+      <area name="曲周县" index="99" />
+      <area name="武安市" index="100" />
+    </city>
+    <city name="邢台市" index="7">
+      <area name="桥东区" index="101" />
+      <area name="桥西区" index="102" />
+      <area name="邢台县" index="103" />
+      <area name="临城县" index="104" />
+      <area name="内丘县" index="105" />
+      <area name="柏乡县" index="106" />
+      <area name="隆尧县" index="107" />
+      <area name="任  县" index="108" />
+      <area name="南和县" index="109" />
+      <area name="宁晋县" index="110" />
+      <area name="巨鹿县" index="111" />
+      <area name="新河县" index="112" />
+      <area name="广宗县" index="113" />
+      <area name="平乡县" index="114" />
+      <area name="威  县" index="115" />
+      <area name="清河县" index="116" />
+      <area name="临西县" index="117" />
+      <area name="南宫市" index="118" />
+      <area name="沙河市" index="119" />
+    </city>
+    <city name="保定市" index="8">
+      <area name="新市区" index="120" />
+      <area name="北市区" index="121" />
+      <area name="南市区" index="122" />
+      <area name="满城县" index="123" />
+      <area name="清苑县" index="124" />
+      <area name="涞水县" index="125" />
+      <area name="阜平县" index="126" />
+      <area name="徐水县" index="127" />
+      <area name="定兴县" index="128" />
+      <area name="唐  县" index="129" />
+      <area name="高阳县" index="130" />
+      <area name="容城县" index="131" />
+      <area name="涞源县" index="132" />
+      <area name="望都县" index="133" />
+      <area name="安新县" index="134" />
+      <area name="易  县" index="135" />
+      <area name="曲阳县" index="136" />
+      <area name="蠡  县" index="137" />
+      <area name="顺平县" index="138" />
+      <area name="博野县" index="139" />
+      <area name="雄  县" index="140" />
+      <area name="涿州市" index="141" />
+      <area name="定州市" index="142" />
+      <area name="安国市" index="143" />
+      <area name="高碑店市" index="144" />
+    </city>
+    <city name="张家口市" index="9">
+      <area name="桥东区" index="145" />
+      <area name="桥西区" index="146" />
+      <area name="宣化区" index="147" />
+      <area name="下花园区" index="148" />
+      <area name="宣化县" index="149" />
+      <area name="张北县" index="150" />
+      <area name="康保县" index="151" />
+      <area name="沽源县" index="152" />
+      <area name="尚义县" index="153" />
+      <area name="蔚  县" index="154" />
+      <area name="阳原县" index="155" />
+      <area name="怀安县" index="156" />
+      <area name="万全县" index="157" />
+      <area name="怀来县" index="158" />
+      <area name="涿鹿县" index="159" />
+      <area name="赤城县" index="160" />
+      <area name="崇礼县" index="161" />
+    </city>
+    <city name="承德市" index="10">
+      <area name="双桥区" index="162" />
+      <area name="双滦区" index="163" />
+      <area name="鹰手营子矿区" index="164" />
+      <area name="承德县" index="165" />
+      <area name="兴隆县" index="166" />
+      <area name="平泉县" index="167" />
+      <area name="滦平县" index="168" />
+      <area name="隆化县" index="169" />
+      <area name="丰宁满族自治县" index="170" />
+      <area name="宽城满族自治县" index="171" />
+      <area name="围场满族蒙古族自治县" index="172" />
+    </city>
+    <city name="沧州市" index="11">
+      <area name="新华区" index="173" />
+      <area name="运河区" index="174" />
+      <area name="沧  县" index="175" />
+      <area name="青  县" index="176" />
+      <area name="东光县" index="177" />
+      <area name="海兴县" index="178" />
+      <area name="盐山县" index="179" />
+      <area name="肃宁县" index="180" />
+      <area name="南皮县" index="181" />
+      <area name="吴桥县" index="182" />
+      <area name="献  县" index="183" />
+      <area name="孟村回族自治县" index="184" />
+      <area name="泊头市" index="185" />
+      <area name="任丘市" index="186" />
+      <area name="黄骅市" index="187" />
+      <area name="河间市" index="188" />
+    </city>
+    <city name="廊坊市" index="12">
+      <area name="安次区" index="189" />
+      <area name="固安县" index="190" />
+      <area name="永清县" index="191" />
+      <area name="香河县" index="192" />
+      <area name="大城县" index="193" />
+      <area name="文安县" index="194" />
+      <area name="大厂回族自治县" index="195" />
+      <area name="霸州市" index="196" />
+      <area name="三河市" index="197" />
+    </city>
+    <city name="衡水市" index="13">
+      <area name="桃城区" index="198" />
+      <area name="枣强县" index="199" />
+      <area name="武邑县" index="200" />
+      <area name="武强县" index="201" />
+      <area name="饶阳县" index="202" />
+      <area name="安平县" index="203" />
+      <area name="故城县" index="204" />
+      <area name="景  县" index="205" />
+      <area name="阜城县" index="206" />
+      <area name="冀州市" index="207" />
+      <area name="深州市" index="208" />
+    </city>
+  </province>
+</root>
